@@ -1,0 +1,26 @@
+{
+  "name": "angular-animals-mean-crud",
+  "version": "1.0.0",
+  "description": "A small MEAN-app with CRUD about animals",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "nodemon src/app.js"
+  },
+  "keywords": [
+    "AngularJS",
+    "ExpressJS",
+    "MongoDB",
+    "MEAN"
+  ],
+  "author": "Niklas Mårdby",
+  "license": "MIT",
+  "repository" : { 
+    "type" : "git",
+    "url" : "https://github.com/xedric/mean-animals.git"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.12"
+  }
+}

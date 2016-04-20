@@ -1,0 +1,7 @@
+body {
+	font-family: Roboto;
+}
+
+input[type=text] {
+   width: 100px;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>animaldb</title>
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+<body ng-app="animalsApp">
+	<div ng-controller="animalCtrl">
+		<a href="" ng-click="addAnimal()">Add new animal</a>
+		<table>
+			<tr>
+				<th>Fed</th><th>Name</th><th>Weight</th><th>Delete</th><th>Edit</th><th>Save</th>
+			</tr>
+			<tr ng-repeat="animal in animals | orderBy: 'fed' ">
+				<td><input type="checkbox" ng-model="animal.fed" ng-change="saveAnimal(animal, $index)" /></td>
+				<td ng-hide="animal.editing">{{animal.name}}</td><td ng-show="animal.editing"><input type="text" value={{animal.name}} ng-model="animal.name" /></td>
+				<td ng-hide="animal.editing">{{animal.weight}}</td><td ng-show="animal.editing"><input type="text" value={{animal.weight}} ng-model="animal.weight" /></td>
+				<td><a href="" ng-click="deleteAnimal(animal, $index)">delete</a></td>
+				<td><a href="" ng-click="animal.editing = true">edit</a></td>
+				<td><a href="" ng-click="saveAnimal(animal, $index)">save</a></td>
+			</tr>
+		</table>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+	<script src="scripts/app.js" type="text/javascript"></script>
+	<script src="scripts/services.js" type="text/javascript"></script>
+	<script src="scripts/controllers.js" type="text/javascript"></script>
+	<script src="scripts/directives.js" type="text/javascript"></script>
+</body>
+</html>
